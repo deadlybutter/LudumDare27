@@ -59,7 +59,7 @@ public class ChallengeManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+			
 	}
 	
 	void OnGUI(){
@@ -83,20 +83,23 @@ public class ChallengeManager : MonoBehaviour {
 	}	
 	
 	void checkAndUpdateStatus(){
-		GameObject challenge = (GameObject) challenges[count];
+		GameObject challenge = (GameObject) challenges[count];		
 		if(challenge.name.EndsWith(UNCOMPLETED_TAG)){
 			Application.LoadLevel("MainMenu");
 			return;	
 		}
-		if(count >= 10){
-			Application.LoadLevel("MainMenu");
-			return;
-		}
 		count++;
 		seconds = 11;
+		if(count == 10){
+			Application.LoadLevel("ExitScene");
+			return;
+		}		
 	}
 	
 	void updateEmergencyLight(){
+		if(count >= challenges.Count){
+			return;	
+		}	
 		GameObject current = (GameObject) challenges[count];
 		if(current.name.EndsWith(UNCOMPLETED_TAG)){
 			if(lightOn){

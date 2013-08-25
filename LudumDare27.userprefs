@@ -2,15 +2,16 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ChallengeManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerScript.cs" Line="72" Column="3" />
+      <File FileName="Assets\Scripts\ChallengeManager.cs" Line="36" Column="51" />
+      <File FileName="Assets\Scripts\PlayerScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\EarthScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ChallengeManager.cs" Line="88" Column="38" />
       <File FileName="Assets\Scripts\MainMenuGUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Bullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BeepSounds.cs" Line="40" Column="2" />
-      <File FileName="Assets\Scripts\BlipSounds.cs" Line="33" Column="42" />
-      <File FileName="Assets\Scripts\BopSounds.cs" Line="13" Column="2" />
-      <File FileName="Assets\Scripts\PipeSounds.cs" Line="17" Column="47" />
+      <File FileName="Assets\Scripts\BeepSounds.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BlipSounds.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BopSounds.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PipeSounds.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NarrationPlayer.cs" Line="22" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
