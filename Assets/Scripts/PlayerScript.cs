@@ -15,12 +15,20 @@ public class PlayerScript : MonoBehaviour {
 	public CharacterController cc;	
 	public int ammo = 2;
 	public Texture2D crosshair;
+	public Texture2D ammoImage;
+	public AudioSource audioSource;
+	public AudioClip gunSound;
+	public GUIStyle style;
 	
 	// Use this for initialization
 	void Start () {
 		Screen.lockCursor = true;
 		cc =  GetComponent<CharacterController>();
+		audioSource = GetComponent<AudioSource>();
 		InvokeRepeating("reload", 10f, 10f);
+		style = new GUIStyle();
+		style.fontSize = 24;
+		style.normal.textColor = Color.white;
 	}
 	
 	// Update is called once per frame
@@ -50,6 +58,7 @@ public class PlayerScript : MonoBehaviour {
 			GameObject bullet = (GameObject)Instantiate(bulletPrefab, Camera.main.transform.position + (Camera.main.transform.forward), Camera.main.transform.rotation); 	
 			bullet.rigidbody.AddForce(Camera.main.transform.forward * bulletImpulse, ForceMode.Impulse);
 			ammo--;
+			audioSource.PlayOneShot(gunSound, 0.5f);
 		}
 		
 		speed = new Vector3(sideSpeed, verticalVelocity, forwardSpeed);
@@ -60,11 +69,15 @@ public class PlayerScript : MonoBehaviour {
 	}
 	
 	void OnGUI(){
-		GUI.Box(new Rect(10, 50, 300, 30), "Fix-I Gun 9000 Ammo remaining " + ammo); 	
 		
 		float xMin = (Screen.width / 2) - (crosshair.width / 2);
 		float yMin = (Screen.height / 2) - (crosshair.height / 2);
-		GUI.DrawTexture(new Rect(xMin, yMin, crosshair.width, crosshair.height), crosshair);		
+		GUI.DrawTexture(new Rect(xMin, yMin, crosshair.width, crosshair.height), crosshair);
+		
+		int x = 20; 
+		int y = (Screen.height - 20) - ammoImage.height;
+		GUI.DrawTexture(new Rect(x, y, ammoImage.width, ammoImage.height), ammoImage);
+		GUI.Label(new Rect(x + (ammoImage.width / 2), y + (ammoImage.height / 2), ammoImage.width, ammoImage.height), "" + ammo, style);		
 	}
 	
 	void reload(){

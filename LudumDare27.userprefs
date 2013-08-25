@@ -2,12 +2,15 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ChallengeManager.cs">
     <Files>
-      <File FileName="..\..\Unity\BlockFPS\Assets\PlayerControls.cs" Line="19" Column="33" />
-      <File FileName="Assets\Scripts\PlayerScript.cs" Line="26" Column="18" />
+      <File FileName="Assets\Scripts\PlayerScript.cs" Line="72" Column="3" />
       <File FileName="Assets\Scripts\EarthScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ChallengeManager.cs" Line="39" Column="36" />
-      <File FileName="Assets\Scripts\MainMenuGUI.cs" Line="24" Column="39" />
-      <File FileName="Assets\Scripts\Bullet.cs" Line="21" Column="23" />
+      <File FileName="Assets\Scripts\ChallengeManager.cs" Line="88" Column="38" />
+      <File FileName="Assets\Scripts\MainMenuGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Bullet.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BeepSounds.cs" Line="40" Column="2" />
+      <File FileName="Assets\Scripts\BlipSounds.cs" Line="33" Column="42" />
+      <File FileName="Assets\Scripts\BopSounds.cs" Line="13" Column="2" />
+      <File FileName="Assets\Scripts\PipeSounds.cs" Line="17" Column="47" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
