@@ -5,7 +5,8 @@ public class MainMenuGUI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		Screen.lockCursor = false;
+		//Screen.lockCursor = true;
 	}
 	
 	// Update is called once per frame

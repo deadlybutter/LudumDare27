@@ -85,7 +85,7 @@ public class ChallengeManager : MonoBehaviour {
 	void checkAndUpdateStatus(){
 		GameObject challenge = (GameObject) challenges[count];		
 		if(challenge.name.EndsWith(UNCOMPLETED_TAG)){
-			Application.LoadLevel("MainMenu");
+			Application.LoadLevel("death_screen");
 			return;	
 		}
 		count++;

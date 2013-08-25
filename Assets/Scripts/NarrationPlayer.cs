@@ -18,7 +18,6 @@ public class NarrationPlayer : MonoBehaviour {
 	}
 	
 	void switchScenes(){
-		Debug.Log (clip.name);
 		if(clip.name.Equals("Intro")){
 			Application.LoadLevel("GameScene");	
 		}
