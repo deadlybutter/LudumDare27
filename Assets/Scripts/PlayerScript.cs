@@ -14,6 +14,7 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject bulletPrefab;
 	public CharacterController cc;	
 	public int ammo = 2;
+	public Texture2D crosshair;
 	
 	// Use this for initialization
 	void Start () {
@@ -60,6 +61,10 @@ public class PlayerScript : MonoBehaviour {
 	
 	void OnGUI(){
 		GUI.Box(new Rect(10, 50, 300, 30), "Fix-I Gun 9000 Ammo remaining " + ammo); 	
+		
+		float xMin = (Screen.width / 2) - (crosshair.width / 2);
+		float yMin = (Screen.height / 2) - (crosshair.height / 2);
+		GUI.DrawTexture(new Rect(xMin, yMin, crosshair.width, crosshair.height), crosshair);		
 	}
 	
 	void reload(){

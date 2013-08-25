@@ -56,6 +56,10 @@ public class ChallengeManager : MonoBehaviour {
 			//Lost the game
 			return;	
 		}
+		if(challenges.Capacity >= 10){
+			//Won game
+			return;
+		}
 		count++;
 	}
 	
