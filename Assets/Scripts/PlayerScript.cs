@@ -10,12 +10,16 @@ public class PlayerScript : MonoBehaviour {
 	public float verticalVelocity;
 	public float jumpSpeed;	
 	public float gravity;
+	public float bulletImpulse;
+	public GameObject bulletPrefab;
 	public CharacterController cc;	
+	public int ammo = 2;
 	
 	// Use this for initialization
 	void Start () {
 		Screen.lockCursor = true;
 		cc =  GetComponent<CharacterController>();
+		InvokeRepeating("reload", 10f, 10f);
 	}
 	
 	// Update is called once per frame
@@ -41,10 +45,25 @@ public class PlayerScript : MonoBehaviour {
 			verticalVelocity = jumpSpeed;	
 		}
 		
+		if(Input.GetButtonDown("Fire1") && ammo > 0){
+			GameObject bullet = (GameObject)Instantiate(bulletPrefab, Camera.main.transform.position + (Camera.main.transform.forward), Camera.main.transform.rotation); 	
+			bullet.rigidbody.AddForce(Camera.main.transform.forward * bulletImpulse, ForceMode.Impulse);
+			ammo--;
+		}
+		
 		speed = new Vector3(sideSpeed, verticalVelocity, forwardSpeed);
 		speed = transform.rotation * speed;
 		
 		cc.Move(speed * Time.deltaTime);		
 		
 	}
+	
+	void OnGUI(){
+		GUI.Box(new Rect(10, 50, 300, 30), "Fix-I Gun 9000 Ammo remaining " + ammo); 	
+	}
+	
+	void reload(){
+		ammo += 2;	
+	}
+	
 }
